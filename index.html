@@ -6,6 +6,48 @@
 <title>Dokument bez tytułu</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	.affix-top {
+  position: relative;
+}
+
+.affix {
+  top: 20px;
+}
+
+.affix, 
+.affix-bottom {
+    width: 213px;
+}
+
+.affix-bottom {
+  position: absolute;
+}
+.nav .active {
+  font-weight: bold;
+  background: #72bcd4;
+}
+.nav .nav {
+  display: none;
+}
+
+.nav .active .nav {
+  display: block;
+}
+	.nav .nav .active a,
+.nav .nav .active:hover a,
+.nav .nav .active:focus a {
+  font-weight: bold;
+  padding-left: 30px;
+  border-left: 5px solid black;
+}
+
+.nav .nav .active span,
+.nav .nav .active:hover span,
+.nav .nav .active:focus span {
+  display: none;
+}
+</style>
 </head>
 
 <body data-spy="scroll" data-target=".scrollspy">
@@ -385,5 +427,14 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+	$('#nav').affix({
+    offset: {     
+      top: $('#nav').offset().top,
+      bottom: ($('footer').outerHeight(true) + $('.application').outerHeight(true)) + 40
+    }
+});
+	
+</script>
 </body>
 </html>
